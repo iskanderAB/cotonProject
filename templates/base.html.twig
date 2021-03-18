@@ -6,14 +6,48 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+            <meta charset="UTF-8">
+            <meta name="description" content="">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <!-- Title  -->
+            <title>Amado - Furniture Ecommerce Template | Home</title>
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            <!-- Favicon  -->
+            <link rel="icon" href="/img/core-img/favicon.ico">
+
+            <!-- Core Style CSS -->
+            <link rel="stylesheet" href="/css/core-style.css">
+            <link rel="stylesheet" href="/style.css">
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                        <li><a href="#">Page 3</a></li>
+                    </ul>
+                </div>
+            </nav>
+        {% endblock %}
+        {% block javascripts %}
+            <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+            <!-- Popper js -->
+            <script src="/js/popper.min.js"></script>
+            <!-- Bootstrap js -->
+            <script src="/js/bootstrap.min.js"></script>
+            <!-- Plugins js -->
+            <script src="/js/plugins.js"></script>
+            <!-- Active js -->
+            <script src="/js/active.js"></script>
+        {% endblock %}
     </body>
 </html>
