@@ -6,37 +6,106 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            <meta charset="UTF-8">
-            <meta name="description" content="">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-            <!-- Title  -->
-            <title>Amado - Furniture Ecommerce Template | Home</title>
+            <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-            <!-- Favicon  -->
-            <link rel="icon" href="/img/core-img/favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-            <!-- Core Style CSS -->
-            <link rel="stylesheet" href="/css/core-style.css">
-            <link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
         {% endblock %}
     </head>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+			
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active"><a href="home/index.html.twig" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">ARTICLES</a></li>
+	        	
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LA GESTION DES CREDIT AUX AGRICULTE</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="#">Gestion Des Expressions Des Besoins</a>
+                <a class="dropdown-item" href="#">Gestion Des Bordereaux De Reglement</a>
+                <a class="dropdown-item" href="#">Gestion Des Bordereaux De Livraison</a>
+                <a class="dropdown-item" href="#">Gestion Des Factures De Livraison Intrant</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LA GESTION DE COLLECTE DU COTON</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="#">Gestion Des Tickets De Pesée</a>
+                <a class="dropdown-item" href="#">Gestion Des Factures De Livraison Coton</a>
+                <a class="dropdown-item" href="#">Gestion Des Factures Globales</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="#">Users</a>
+                <a class="dropdown-item" href="#">Transpoteurs</a>
+                <a class="dropdown-item" href="#">Véhicules</a>
+              </div>
+            </li>
+	        	
+	
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
     <body>
         {% block body %}
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">WebSiteName</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
-                    </ul>
-                </div>
-            </nav>
+             <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+			
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active"><a href="home/index.html.twig" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">ARTICLES</a></li>
+	        	
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LA GESTION DES CREDIT AUX AGRICULTE</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="#">Gestion Des Expressions Des Besoins</a>
+                <a class="dropdown-item" href="#">Gestion Des Bordereaux De Reglement</a>
+                <a class="dropdown-item" href="#">Gestion Des Bordereaux De Livraison</a>
+                <a class="dropdown-item" href="#">Gestion Des Factures De Livraison Intrant</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LA GESTION DE COLLECTE DU COTON</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="#">Gestion Des Tickets De Pesée</a>
+                <a class="dropdown-item" href="#">Gestion Des Factures De Livraison Coton</a>
+                <a class="dropdown-item" href="#">Gestion Des Factures Globales</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="#">Users</a>
+                <a class="dropdown-item" href="#">Transpoteurs</a>
+                <a class="dropdown-item" href="#">Véhicules</a>
+              </div>
+            </li>
+	        	
+	
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
         {% endblock %}
         {% block javascripts %}
             <script src="/js/jquery/jquery-2.2.4.min.js"></script>
