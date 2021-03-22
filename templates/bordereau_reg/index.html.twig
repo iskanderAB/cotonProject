@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BordereauReg index{% endblock %}
+
+{% block body %}
+    <h1>BordereauReg index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumBorReg</th>
+                <th>Date</th>
+                <th>MntReg</th>
+                <th>ModPaie</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bordereau_reg in bordereau_regs %}
+            <tr>
+                <td>{{ bordereau_reg.id }}</td>
+                <td>{{ bordereau_reg.numBorReg }}</td>
+                <td>{{ bordereau_reg.date ? bordereau_reg.date|date('Y-m-d') : '' }}</td>
+                <td>{{ bordereau_reg.mntReg }}</td>
+                <td>{{ bordereau_reg.modPaie }}</td>
+                <td>
+                    <a href="{{ path('bordereau_reg_show', {'id': bordereau_reg.id}) }}">show</a>
+                    <a href="{{ path('bordereau_reg_edit', {'id': bordereau_reg.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bordereau_reg_new') }}">Create new</a>
+{% endblock %}

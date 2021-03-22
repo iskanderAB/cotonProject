@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CentreGestInt{% endblock %}
+
+{% block body %}
+    <h1>Edit CentreGestInt</h1>
+
+    {{ include('centre_gest_int/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('centre_gest_int_index') }}">back to list</a>
+
+    {{ include('centre_gest_int/_delete_form.html.twig') }}
+{% endblock %}

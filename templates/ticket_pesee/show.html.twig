@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TicketPesee{% endblock %}
+
+{% block body %}
+    <h1>TicketPesee</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ticket_pesee.id }}</td>
+            </tr>
+            <tr>
+                <th>NumTicket</th>
+                <td>{{ ticket_pesee.numTicket }}</td>
+            </tr>
+            <tr>
+                <th>Compagne</th>
+                <td>{{ ticket_pesee.compagne }}</td>
+            </tr>
+            <tr>
+                <th>NumCaisse</th>
+                <td>{{ ticket_pesee.numCaisse }}</td>
+            </tr>
+            <tr>
+                <th>DateP1</th>
+                <td>{{ ticket_pesee.dateP1 ? ticket_pesee.dateP1|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateP2</th>
+                <td>{{ ticket_pesee.dateP2 ? ticket_pesee.dateP2|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>HeureP1</th>
+                <td>{{ ticket_pesee.heureP1 }}</td>
+            </tr>
+            <tr>
+                <th>HeureP2</th>
+                <td>{{ ticket_pesee.heureP2 }}</td>
+            </tr>
+            <tr>
+                <th>Peseur</th>
+                <td>{{ ticket_pesee.peseur }}</td>
+            </tr>
+            <tr>
+                <th>PoidsP1</th>
+                <td>{{ ticket_pesee.poidsP1 }}</td>
+            </tr>
+            <tr>
+                <th>PoidsP2</th>
+                <td>{{ ticket_pesee.poidsP2 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('ticket_pesee_index') }}">back to list</a>
+
+    <a href="{{ path('ticket_pesee_edit', {'id': ticket_pesee.id}) }}">edit</a>
+
+    {{ include('ticket_pesee/_delete_form.html.twig') }}
+{% endblock %}

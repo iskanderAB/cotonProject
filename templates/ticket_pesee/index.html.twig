@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TicketPesee index{% endblock %}
+
+{% block body %}
+    <h1>TicketPesee index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumTicket</th>
+                <th>Compagne</th>
+                <th>NumCaisse</th>
+                <th>DateP1</th>
+                <th>DateP2</th>
+                <th>HeureP1</th>
+                <th>HeureP2</th>
+                <th>Peseur</th>
+                <th>PoidsP1</th>
+                <th>PoidsP2</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ticket_pesee in ticket_pesees %}
+            <tr>
+                <td>{{ ticket_pesee.id }}</td>
+                <td>{{ ticket_pesee.numTicket }}</td>
+                <td>{{ ticket_pesee.compagne }}</td>
+                <td>{{ ticket_pesee.numCaisse }}</td>
+                <td>{{ ticket_pesee.dateP1 ? ticket_pesee.dateP1|date('Y-m-d') : '' }}</td>
+                <td>{{ ticket_pesee.dateP2 ? ticket_pesee.dateP2|date('Y-m-d') : '' }}</td>
+                <td>{{ ticket_pesee.heureP1 }}</td>
+                <td>{{ ticket_pesee.heureP2 }}</td>
+                <td>{{ ticket_pesee.peseur }}</td>
+                <td>{{ ticket_pesee.poidsP1 }}</td>
+                <td>{{ ticket_pesee.poidsP2 }}</td>
+                <td>
+                    <a href="{{ path('ticket_pesee_show', {'id': ticket_pesee.id}) }}">show</a>
+                    <a href="{{ path('ticket_pesee_edit', {'id': ticket_pesee.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('ticket_pesee_new') }}">Create new</a>
+{% endblock %}

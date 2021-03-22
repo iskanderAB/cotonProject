@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Besoin index{% endblock %}
+
+{% block body %}
+    <h1>Besoin index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Libelle</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for besoin in besoins %}
+            <tr>
+                <td>{{ besoin.id }}</td>
+                <td>{{ besoin.code }}</td>
+                <td>{{ besoin.libelle }}</td>
+                <td>{{ besoin.date ? besoin.date|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('besoin_show', {'id': besoin.id}) }}">show</a>
+                    <a href="{{ path('besoin_edit', {'id': besoin.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('besoin_new') }}">Create new</a>
+{% endblock %}

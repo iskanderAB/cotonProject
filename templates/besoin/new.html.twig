@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Besoin{% endblock %}
+
+{% block body %}
+    <h1>Create new Besoin</h1>
+
+    {{ include('besoin/_form.html.twig') }}
+
+    <a href="{{ path('besoin_index') }}">back to list</a>
+{% endblock %}

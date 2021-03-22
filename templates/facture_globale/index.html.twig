@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FactureGlobale index{% endblock %}
+
+{% block body %}
+    <h1>FactureGlobale index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumFactG</th>
+                <th>Date</th>
+                <th>ModPaie</th>
+                <th>DatePaie</th>
+                <th>Obs</th>
+                <th>Credit</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for facture_globale in facture_globales %}
+            <tr>
+                <td>{{ facture_globale.id }}</td>
+                <td>{{ facture_globale.numFactG }}</td>
+                <td>{{ facture_globale.date ? facture_globale.date|date('Y-m-d') : '' }}</td>
+                <td>{{ facture_globale.modPaie }}</td>
+                <td>{{ facture_globale.datePaie ? facture_globale.datePaie|date('Y-m-d') : '' }}</td>
+                <td>{{ facture_globale.obs }}</td>
+                <td>{{ facture_globale.credit }}</td>
+                <td>
+                    <a href="{{ path('facture_globale_show', {'id': facture_globale.id}) }}">show</a>
+                    <a href="{{ path('facture_globale_edit', {'id': facture_globale.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('facture_globale_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New FactureGlobale{% endblock %}
+
+{% block body %}
+    <h1>Create new FactureGlobale</h1>
+
+    {{ include('facture_globale/_form.html.twig') }}
+
+    <a href="{{ path('facture_globale_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New FactureLivInt{% endblock %}
+
+{% block body %}
+    <h1>Create new FactureLivInt</h1>
+
+    {{ include('facture_liv_int/_form.html.twig') }}
+
+    <a href="{{ path('facture_liv_int_index') }}">back to list</a>
+{% endblock %}

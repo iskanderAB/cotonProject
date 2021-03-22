@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BordereauLiv index{% endblock %}
+
+{% block body %}
+    <h1>BordereauLiv index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumBord</th>
+                <th>Date</th>
+                <th>ModPaie</th>
+                <th>ModLiv</th>
+                <th>DatePaie</th>
+                <th>DelLiv</th>
+                <th>TauxRem</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bordereau_liv in bordereau_livs %}
+            <tr>
+                <td>{{ bordereau_liv.id }}</td>
+                <td>{{ bordereau_liv.numBord }}</td>
+                <td>{{ bordereau_liv.date ? bordereau_liv.date|date('Y-m-d') : '' }}</td>
+                <td>{{ bordereau_liv.modPaie }}</td>
+                <td>{{ bordereau_liv.modLiv }}</td>
+                <td>{{ bordereau_liv.datePaie ? bordereau_liv.datePaie|date('Y-m-d') : '' }}</td>
+                <td>{{ bordereau_liv.delLiv ? bordereau_liv.delLiv|date('Y-m-d') : '' }}</td>
+                <td>{{ bordereau_liv.tauxRem }}</td>
+                <td>
+                    <a href="{{ path('bordereau_liv_show', {'id': bordereau_liv.id}) }}">show</a>
+                    <a href="{{ path('bordereau_liv_edit', {'id': bordereau_liv.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bordereau_liv_new') }}">Create new</a>
+{% endblock %}

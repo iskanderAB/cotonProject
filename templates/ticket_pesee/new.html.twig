@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TicketPesee{% endblock %}
+
+{% block body %}
+    <h1>Create new TicketPesee</h1>
+
+    {{ include('ticket_pesee/_form.html.twig') }}
+
+    <a href="{{ path('ticket_pesee_index') }}">back to list</a>
+{% endblock %}

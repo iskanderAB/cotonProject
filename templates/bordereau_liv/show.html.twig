@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BordereauLiv{% endblock %}
+
+{% block body %}
+    <h1>BordereauLiv</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bordereau_liv.id }}</td>
+            </tr>
+            <tr>
+                <th>NumBord</th>
+                <td>{{ bordereau_liv.numBord }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ bordereau_liv.date ? bordereau_liv.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ModPaie</th>
+                <td>{{ bordereau_liv.modPaie }}</td>
+            </tr>
+            <tr>
+                <th>ModLiv</th>
+                <td>{{ bordereau_liv.modLiv }}</td>
+            </tr>
+            <tr>
+                <th>DatePaie</th>
+                <td>{{ bordereau_liv.datePaie ? bordereau_liv.datePaie|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DelLiv</th>
+                <td>{{ bordereau_liv.delLiv ? bordereau_liv.delLiv|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>TauxRem</th>
+                <td>{{ bordereau_liv.tauxRem }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bordereau_liv_index') }}">back to list</a>
+
+    <a href="{{ path('bordereau_liv_edit', {'id': bordereau_liv.id}) }}">edit</a>
+
+    {{ include('bordereau_liv/_delete_form.html.twig') }}
+{% endblock %}

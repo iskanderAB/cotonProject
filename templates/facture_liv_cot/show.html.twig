@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FactureLivCot{% endblock %}
+
+{% block body %}
+    <h1>FactureLivCot</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ facture_liv_cot.id }}</td>
+            </tr>
+            <tr>
+                <th>NumFactLiv</th>
+                <td>{{ facture_liv_cot.numFactLiv }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ facture_liv_cot.date ? facture_liv_cot.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ModPaie</th>
+                <td>{{ facture_liv_cot.modPaie }}</td>
+            </tr>
+            <tr>
+                <th>ModLiv</th>
+                <td>{{ facture_liv_cot.modLiv }}</td>
+            </tr>
+            <tr>
+                <th>DatePaie</th>
+                <td>{{ facture_liv_cot.datePaie ? facture_liv_cot.datePaie|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Obs</th>
+                <td>{{ facture_liv_cot.obs }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('facture_liv_cot_index') }}">back to list</a>
+
+    <a href="{{ path('facture_liv_cot_edit', {'id': facture_liv_cot.id}) }}">edit</a>
+
+    {{ include('facture_liv_cot/_delete_form.html.twig') }}
+{% endblock %}

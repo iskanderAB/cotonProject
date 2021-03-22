@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FactureLivCot index{% endblock %}
+
+{% block body %}
+    <h1>FactureLivCot index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumFactLiv</th>
+                <th>Date</th>
+                <th>ModPaie</th>
+                <th>ModLiv</th>
+                <th>DatePaie</th>
+                <th>Obs</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for facture_liv_cot in facture_liv_cots %}
+            <tr>
+                <td>{{ facture_liv_cot.id }}</td>
+                <td>{{ facture_liv_cot.numFactLiv }}</td>
+                <td>{{ facture_liv_cot.date ? facture_liv_cot.date|date('Y-m-d') : '' }}</td>
+                <td>{{ facture_liv_cot.modPaie }}</td>
+                <td>{{ facture_liv_cot.modLiv }}</td>
+                <td>{{ facture_liv_cot.datePaie ? facture_liv_cot.datePaie|date('Y-m-d') : '' }}</td>
+                <td>{{ facture_liv_cot.obs }}</td>
+                <td>
+                    <a href="{{ path('facture_liv_cot_show', {'id': facture_liv_cot.id}) }}">show</a>
+                    <a href="{{ path('facture_liv_cot_edit', {'id': facture_liv_cot.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('facture_liv_cot_new') }}">Create new</a>
+{% endblock %}

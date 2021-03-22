@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AssociationVillagoise{% endblock %}
+
+{% block body %}
+    <h1>Edit AssociationVillagoise</h1>
+
+    {{ include('association_villagoise/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('association_villagoise_index') }}">back to list</a>
+
+    {{ include('association_villagoise/_delete_form.html.twig') }}
+{% endblock %}

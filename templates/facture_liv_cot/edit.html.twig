@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit FactureLivCot{% endblock %}
+
+{% block body %}
+    <h1>Edit FactureLivCot</h1>
+
+    {{ include('facture_liv_cot/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('facture_liv_cot_index') }}">back to list</a>
+
+    {{ include('facture_liv_cot/_delete_form.html.twig') }}
+{% endblock %}

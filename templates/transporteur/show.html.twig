@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Transporteur{% endblock %}
+
+{% block body %}
+    <h1>Transporteur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ transporteur.id }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ transporteur.code }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ transporteur.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Representant</th>
+                <td>{{ transporteur.representant }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ transporteur.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ transporteur.email }}</td>
+            </tr>
+            <tr>
+                <th>NumFix</th>
+                <td>{{ transporteur.numFix }}</td>
+            </tr>
+            <tr>
+                <th>Mobile</th>
+                <td>{{ transporteur.mobile }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ transporteur.fax }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('transporteur_index') }}">back to list</a>
+
+    <a href="{{ path('transporteur_edit', {'id': transporteur.id}) }}">edit</a>
+
+    {{ include('transporteur/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FactureGlobale{% endblock %}
+
+{% block body %}
+    <h1>FactureGlobale</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ facture_globale.id }}</td>
+            </tr>
+            <tr>
+                <th>NumFactG</th>
+                <td>{{ facture_globale.numFactG }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ facture_globale.date ? facture_globale.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ModPaie</th>
+                <td>{{ facture_globale.modPaie }}</td>
+            </tr>
+            <tr>
+                <th>DatePaie</th>
+                <td>{{ facture_globale.datePaie ? facture_globale.datePaie|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Obs</th>
+                <td>{{ facture_globale.obs }}</td>
+            </tr>
+            <tr>
+                <th>Credit</th>
+                <td>{{ facture_globale.credit }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('facture_globale_index') }}">back to list</a>
+
+    <a href="{{ path('facture_globale_edit', {'id': facture_globale.id}) }}">edit</a>
+
+    {{ include('facture_globale/_delete_form.html.twig') }}
+{% endblock %}
