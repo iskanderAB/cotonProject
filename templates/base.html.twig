@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
         {% endblock %}
     </head>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -25,32 +25,32 @@
 			
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active"><a href="home/index.html.twig" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">ARTICLES</a></li>
+	        	<li class="nav-item active"><a href="{{path('home')}}" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="{{path('article_index')}}" class="nav-link">ARTICLES</a></li>
 	        	
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LA GESTION DES CREDIT AUX AGRICULTE</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="#">Gestion Des Expressions Des Besoins</a>
-                <a class="dropdown-item" href="#">Gestion Des Bordereaux De Reglement</a>
-                <a class="dropdown-item" href="#">Gestion Des Bordereaux De Livraison</a>
-                <a class="dropdown-item" href="#">Gestion Des Factures De Livraison Intrant</a>
+              	<a class="dropdown-item" href="{{path('besoin_index')}}">Gestion Des Expressions Des Besoins</a>
+                <a class="dropdown-item" href="{{path('bordereau_reg_index')}}">Gestion Des Bordereaux De Reglement</a>
+                <a class="dropdown-item" href="{{path('bordereau_liv_index')}}">Gestion Des Bordereaux De Livraison</a>
+                <a class="dropdown-item" href="{{path('facture_liv_int_index')}}">Gestion Des Factures De Livraison Intrant</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LA GESTION DE COLLECTE DU COTON</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="#">Gestion Des Tickets De Pesée</a>
-                <a class="dropdown-item" href="#">Gestion Des Factures De Livraison Coton</a>
-                <a class="dropdown-item" href="#">Gestion Des Factures Globales</a>
+              	<a class="dropdown-item" href="{{path('ticket_pesee_index')}}">Gestion Des Tickets De Pesée</a>
+                <a class="dropdown-item" href="{{path('facture_liv_cot_index')}}">Gestion Des Factures De Livraison Coton</a>
+                <a class="dropdown-item" href="{{path('facture_globale_index')}}">Gestion Des Factures Globales</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="#">Users</a>
-                <a class="dropdown-item" href="#">Transpoteurs</a>
-                <a class="dropdown-item" href="#">Véhicules</a>
+              	<a class="dropdown-item" href="{{path('user')}}">Users</a>
+                <a class="dropdown-item" href="{{path('transporteur_index')}}">Transpoteurs</a>
+                <a class="dropdown-item" href="{{path('vehicule_index')}}">Véhicules</a>
               </div>
             </li>
 	        	

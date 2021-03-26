@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Form;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use App\Entity\FactureGlobale;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,9 +14,15 @@ class FactureGlobaleType extends AbstractType
     {
         $builder
             ->add('numFactG')
-            ->add('date')
+            ->add('date',DateType::class, [
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
             ->add('modPaie')
-            ->add('datePaie')
+            ->add('datePaie',DateType::class, [
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
             ->add('obs')
             ->add('credit')
         ;

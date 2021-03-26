@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Form;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use App\Entity\BordereauLiv;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,11 +14,20 @@ class BordereauLivType extends AbstractType
     {
         $builder
             ->add('numBord')
-            ->add('date')
+            ->add('date',DateType::class, [
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
             ->add('modPaie')
             ->add('modLiv')
-            ->add('datePaie')
-            ->add('delLiv')
+            ->add('datePaie',DateType::class, [
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
+            ->add('delLiv',DateType::class, [
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
             ->add('tauxRem')
             ->add('besoin')
         ;

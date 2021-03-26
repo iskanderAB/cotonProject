@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Form;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use App\Entity\BordereauReg;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,7 +14,10 @@ class BordereauRegType extends AbstractType
     {
         $builder
             ->add('numBorReg')
-            ->add('date')
+            ->add('date',DateType::class, [
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
             ->add('mntReg')
             ->add('modPaie')
             ->add('factureLivInts')

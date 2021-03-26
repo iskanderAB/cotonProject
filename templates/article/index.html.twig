@@ -1,9 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article index{% endblock %}
+{% block title %}Articles{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Login #3</title>
+  </head>
+    <h1>ArticleS</h1>
 
     <table class="table">
         <thead>
@@ -38,4 +59,5 @@
     </table>
 
     <a href="{{ path('article_new') }}">Create new</a>
+    </html>
 {% endblock %}
