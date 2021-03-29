@@ -1,18 +1,16 @@
 <?php
 
 namespace App\Entity;
-use Symfony\Component\Security\Core\User\UserInterface;
-
-use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ORM\Table(name="`user`")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -22,6 +20,10 @@ class User
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $username;
+ /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $code;
@@ -30,32 +32,29 @@ class User
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $role;
-
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="json")
      */
-    private $login;
+    private $roles = [];
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
     private $password;
+   
 
-    /**
-     * @ORM\OneToMany(targetEntity=Usine::class, mappedBy="user")
-     */
-    private $usine;
-
-    public function __construct()
+    public function getSalt()
     {
-        $this->usine = new ArrayCollection();
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
+        return null;
     }
 
     public function getId(): ?int
     {
         return $this->id;
     }
-
     public function getCode(): ?string
     {
         return $this->code;
@@ -79,25 +78,53 @@ class User
 
         return $this;
     }
-
-    public function getLogin(): ?string
+    public function getusername(): ?string
     {
-        return $this->login;
+        return $this->username;
     }
 
-    public function setLogin(?string $login): self
+    public function setusername(string $username): self
     {
-        $this->login = $login;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
     {
-        return $this->password;
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
-    public function setPassword(?string $password): self
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
+    }
+
+    public function setPassword(string $password): self
     {
         $this->password = $password;
 
@@ -105,38 +132,16 @@ class User
     }
 
     /**
-     * @return Collection|Usine[]
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
      */
-    public function getUsine(): Collection
-    {
-        return $this->usine;
-    }
+    
 
-    public function addUsine(Usine $usine): self
-    {
-        if (!$this->usine->contains($usine)) {
-            $this->usine[] = $usine;
-            $usine->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUsine(Usine $usine): self
-    {
-        if ($this->usine->removeElement($usine)) {
-            // set the owning side to null (unless already changed)
-            if ($usine->getUser() === $this) {
-                $usine->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-    public function getRoles()
-    {
-        return array('ROLE_USER');
-    }
+    /**
+     * @see UserInterface
+     */
 
     public function eraseCredentials()
     {

@@ -50,7 +50,7 @@ class FactureLivCot
     private $obs;
 
     /**
-     * @ORM\OneToMany(targetEntity=Ticketpesee::class, mappedBy="factureLivCot")
+     * @ORM\OneToMany(targetEntity=TicketPesee::class, mappedBy="factureLivCot")
      */
     private $tickets;
 
@@ -137,14 +137,14 @@ class FactureLivCot
     }
 
     /**
-     * @return Collection|Ticketpesee[]
+     * @return Collection|TicketPesee[]
      */
     public function getTickets(): Collection
     {
         return $this->tickets;
     }
 
-    public function addTicket(Ticketpesee $ticket): self
+    public function addTicket(TicketPesee $ticket): self
     {
         if (!$this->tickets->contains($ticket)) {
             $this->tickets[] = $ticket;
@@ -154,7 +154,7 @@ class FactureLivCot
         return $this;
     }
 
-    public function removeTicket(Ticketpesee $ticket): self
+    public function removeTicket(TicketPesee $ticket): self
     {
         if ($this->tickets->removeElement($ticket)) {
             // set the owning side to null (unless already changed)

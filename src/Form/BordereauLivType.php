@@ -13,13 +13,13 @@ class BordereauLivType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numBord')
+            ->add('numBord',TextType::class)
             ->add('date',DateType::class, [
                 // renders it as a single text box
                 'widget' => 'single_text',
             ])
-            ->add('modPaie')
-            ->add('modLiv')
+            ->add('modPaie',TextType::class)
+            ->add('modLiv',TextType::class)
             ->add('datePaie',DateType::class, [
                 // renders it as a single text box
                 'widget' => 'single_text',
@@ -28,8 +28,8 @@ class BordereauLivType extends AbstractType
                 // renders it as a single text box
                 'widget' => 'single_text',
             ])
-            ->add('tauxRem')
-            ->add('besoin')
+            ->add('tauxRem',NumberType::class)
+            ->add('besoin',ChoiceType::class)
         ;
     }
 

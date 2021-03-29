@@ -39,16 +39,7 @@ class Vehicule
      */
     private $transporteur;
 
-    /**
-     * @ORM\OneToMany(targetEntity=usine::class, mappedBy="vehicule")
-     */
-    private $Usine;
-
-    public function __construct()
-    {
-        $this->transporteur = new ArrayCollection();
-        $this->Usine = new ArrayCollection();
-    }
+ 
 
     public function getId(): ?int
     {
@@ -121,33 +112,5 @@ class Vehicule
         return $this;
     }
 
-    /**
-     * @return Collection|usine[]
-     */
-    public function getUsine(): Collection
-    {
-        return $this->Usine;
-    }
-
-    public function addUsine(usine $usine): self
-    {
-        if (!$this->Usine->contains($usine)) {
-            $this->Usine[] = $usine;
-            $usine->setVehicule($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUsine(usine $usine): self
-    {
-        if ($this->Usine->removeElement($usine)) {
-            // set the owning side to null (unless already changed)
-            if ($usine->getVehicule() === $this) {
-                $usine->setVehicule(null);
-            }
-        }
-
-        return $this;
-    }
+    
 }
