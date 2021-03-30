@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
@@ -28,14 +28,17 @@ class UserController extends AbstractController
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request , UserPasswordEncoderInterface $encoder): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         $user->setRoles(["ROLE_ADMIN"]);
+    $userpp=$user->getPassword();
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $encoder = $encoder->encodePassword($user, $userpp);
+            $user->setPassword($encoder);
             $entityManager->persist($user);
             $entityManager->flush();
 

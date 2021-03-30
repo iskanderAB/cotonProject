@@ -78,12 +78,12 @@ class User implements UserInterface
 
         return $this;
     }
-    public function getusername(): ?string
+    public function getUsername(): ?string
     {
         return $this->username;
     }
 
-    public function setusername(string $username): self
+    public function setUsername(string $username): self
     {
         $this->username = $username;
 
