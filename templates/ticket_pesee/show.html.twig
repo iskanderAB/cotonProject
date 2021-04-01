@@ -3,7 +3,7 @@
 {% block title %}Tickets De Pesées{% endblock %}
 
 {% block body %}
-    <h1>Tickets De Pesées</h1>
+    <h1><center>Tickets De Pesées</center></h1>
 
     <table class="table">
         <tbody>
@@ -12,7 +12,7 @@
                 <td>{{ ticket_pesee.id }}</td>
             </tr>
             <tr>
-                <th>NumTicket</th>
+                <th>Numero di Ticket</th>
                 <td>{{ ticket_pesee.numTicket }}</td>
             </tr>
             <tr>
@@ -20,23 +20,23 @@
                 <td>{{ ticket_pesee.compagne }}</td>
             </tr>
             <tr>
-                <th>NumCaisse</th>
+                <th>Numero du Caisse</th>
                 <td>{{ ticket_pesee.numCaisse }}</td>
             </tr>
             <tr>
-                <th>DateP1</th>
+                <th>Date Paiement1</th>
                 <td>{{ ticket_pesee.dateP1 ? ticket_pesee.dateP1|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>DateP2</th>
+                <th>Date Paiement2</th>
                 <td>{{ ticket_pesee.dateP2 ? ticket_pesee.dateP2|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>HeureP1</th>
+                <th>Heure Paiement1</th>
                 <td>{{ ticket_pesee.heureP1 }}</td>
             </tr>
             <tr>
-                <th>HeureP2</th>
+                <th>Heure Paiement2</th>
                 <td>{{ ticket_pesee.heureP2 }}</td>
             </tr>
             <tr>
@@ -44,11 +44,11 @@
                 <td>{{ ticket_pesee.peseur }}</td>
             </tr>
             <tr>
-                <th>PoidsP1</th>
+                <th>Poids P1</th>
                 <td>{{ ticket_pesee.poidsP1 }}</td>
             </tr>
             <tr>
-                <th>PoidsP2</th>
+                <th>Poids P2</th>
                 <td>{{ ticket_pesee.poidsP2 }}</td>
             </tr>
         </tbody>

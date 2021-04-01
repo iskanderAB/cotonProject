@@ -3,7 +3,7 @@
 {% block title %}Facture Livraison Coton{% endblock %}
 
 {% block body %}
-    <h1>Facture Livraison Coton</h1>
+    <h1><center>Facture Livraison Coton</center></h1>
 
     <table class="table">
         <tbody>
@@ -12,7 +12,7 @@
                 <td>{{ facture_liv_cot.id }}</td>
             </tr>
             <tr>
-                <th>NumFactLiv</th>
+                <th>Numero du Facture de Livraison</th>
                 <td>{{ facture_liv_cot.numFactLiv }}</td>
             </tr>
             <tr>
@@ -20,19 +20,19 @@
                 <td>{{ facture_liv_cot.date ? facture_liv_cot.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>ModPaie</th>
+                <th>Modalite du Paiement</th>
                 <td>{{ facture_liv_cot.modPaie }}</td>
             </tr>
             <tr>
-                <th>ModLiv</th>
+                <th>Modalite du Livraison</th>
                 <td>{{ facture_liv_cot.modLiv }}</td>
             </tr>
             <tr>
-                <th>DatePaie</th>
+                <th>Date de Paiement</th>
                 <td>{{ facture_liv_cot.datePaie ? facture_liv_cot.datePaie|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>Obs</th>
+                <th>Observation</th>
                 <td>{{ facture_liv_cot.obs }}</td>
             </tr>
         </tbody>

@@ -13,18 +13,18 @@ class FactureGlobaleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numFactG')
+            ->add('numFactG',TextType::class)
             ->add('date',DateType::class, [
                 // renders it as a single text box
                 'widget' => 'single_text',
             ])
-            ->add('modPaie')
+            ->add('modPaie',TextType::class)
             ->add('datePaie',DateType::class, [
                 // renders it as a single text box
                 'widget' => 'single_text',
             ])
-            ->add('obs')
-            ->add('credit')
+            ->add('obs',DTextType::class)
+            ->add('credit',TextType::class)
         ;
     }
 

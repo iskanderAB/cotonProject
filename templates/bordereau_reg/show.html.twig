@@ -3,7 +3,7 @@
 {% block title %}Bordereau Reglement% endblock %}
 
 {% block body %}
-    <h1>Bordereau Reglement</h1>
+    <h1><center>Bordereau Reglement</center></h1>
 
     <table class="table">
         <tbody>
@@ -12,7 +12,7 @@
                 <td>{{ bordereau_reg.id }}</td>
             </tr>
             <tr>
-                <th>NumBorReg</th>
+                <th>Numero du Bordereau de Reglement</th>
                 <td>{{ bordereau_reg.numBorReg }}</td>
             </tr>
             <tr>
@@ -20,11 +20,11 @@
                 <td>{{ bordereau_reg.date ? bordereau_reg.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>MntReg</th>
+                <th>Montant Regle</th>
                 <td>{{ bordereau_reg.mntReg }}</td>
             </tr>
             <tr>
-                <th>ModPaie</th>
+                <th>Modalite de Paiement</th>
                 <td>{{ bordereau_reg.modPaie }}</td>
             </tr>
         </tbody>

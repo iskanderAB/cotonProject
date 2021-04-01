@@ -3,7 +3,7 @@
 {% block title %}Facture Livraison Intrant{% endblock %}
 
 {% block body %}
-    <h1>Facture Livraison Intrant</h1>
+    <h1><center>Facture Livraison Intrant</center></h1>
 
     <table class="table">
         <tbody>
@@ -12,7 +12,7 @@
                 <td>{{ facture_liv_int.id }}</td>
             </tr>
             <tr>
-                <th>NumFacLiv</th>
+                <th>Numero du Facture de Livraison</th>
                 <td>{{ facture_liv_int.numFacLiv }}</td>
             </tr>
             <tr>
@@ -20,19 +20,19 @@
                 <td>{{ facture_liv_int.date ? facture_liv_int.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>ModPaie</th>
+                <th>Modalite de Paiement</th>
                 <td>{{ facture_liv_int.modPaie }}</td>
             </tr>
             <tr>
-                <th>ModLiv</th>
+                <th>Modalite de Livraison</th>
                 <td>{{ facture_liv_int.modLiv }}</td>
             </tr>
             <tr>
-                <th>DatePaie</th>
+                <th>Date de Paiement</th>
                 <td>{{ facture_liv_int.datePaie ? facture_liv_int.datePaie|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>Obs</th>
+                <th>Observation</th>
                 <td>{{ facture_liv_int.obs }}</td>
             </tr>
         </tbody>

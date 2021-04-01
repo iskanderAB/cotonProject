@@ -3,6 +3,8 @@
 namespace App\Form;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 use App\Entity\TicketPesee;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,9 +15,9 @@ class TicketPeseeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numTicket')
-            ->add('compagne')
-            ->add('numCaisse')
+            ->add('numTicket',TextType::class)
+            ->add('compagne',TextType::class)
+            ->add('numCaisse',TextType::class)
             ->add('dateP1',DateType::class, [
                 // renders it as a single text box
                 'widget' => 'single_text',
@@ -24,12 +26,12 @@ class TicketPeseeType extends AbstractType
                 // renders it as a single text box
                 'widget' => 'single_text',
             ])
-            ->add('heureP1')
-            ->add('heureP2')
-            ->add('peseur')
-            ->add('poidsP1')
-            ->add('poidsP2')
-            ->add('factureLivCot')
+            ->add('heureP1',TextType::class)
+            ->add('heureP2',TextType::class)
+            ->add('peseur',TextType::class)
+            ->add('poidsP1',TextType::class)
+            ->add('poidsP2',TextType::class)
+            ->add('factureLivCot',ChoiceType::class)
         ;
     }
 

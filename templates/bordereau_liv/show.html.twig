@@ -3,7 +3,7 @@
 {% block title %}Bordereau Livraison{% endblock %}
 
 {% block body %}
-    <h1>Bordereau Livraison</h1>
+    <h1><center>Bordereau Livraison</center></h1>
 
     <table class="table">
         <tbody>
@@ -12,7 +12,7 @@
                 <td>{{ bordereau_liv.id }}</td>
             </tr>
             <tr>
-                <th>NumBord</th>
+                <th>Numero du Bordereau</th>
                 <td>{{ bordereau_liv.numBord }}</td>
             </tr>
             <tr>
@@ -20,23 +20,23 @@
                 <td>{{ bordereau_liv.date ? bordereau_liv.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>ModPaie</th>
+                <th>Mode de Paiement</th>
                 <td>{{ bordereau_liv.modPaie }}</td>
             </tr>
             <tr>
-                <th>ModLiv</th>
+                <th>Mode de Livraison</th>
                 <td>{{ bordereau_liv.modLiv }}</td>
             </tr>
             <tr>
-                <th>DatePaie</th>
+                <th>Date du Paiement</th>
                 <td>{{ bordereau_liv.datePaie ? bordereau_liv.datePaie|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>DelLiv</th>
+                <th>Delai de Livraison</th>
                 <td>{{ bordereau_liv.delLiv ? bordereau_liv.delLiv|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>TauxRem</th>
+                <th>Taux Remise</th>
                 <td>{{ bordereau_liv.tauxRem }}</td>
             </tr>
         </tbody>

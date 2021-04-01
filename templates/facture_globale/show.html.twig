@@ -3,7 +3,7 @@
 {% block title %}Facture Globale{% endblock %}
 
 {% block body %}
-    <h1>Facture Globale</h1>
+    <h1><center>Facture Globale</center></h1>
 
     <table class="table">
         <tbody>
@@ -12,7 +12,7 @@
                 <td>{{ facture_globale.id }}</td>
             </tr>
             <tr>
-                <th>NumFactG</th>
+                <th>Numero du Facture Globale</th>
                 <td>{{ facture_globale.numFactG }}</td>
             </tr>
             <tr>
@@ -20,15 +20,15 @@
                 <td>{{ facture_globale.date ? facture_globale.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>ModPaie</th>
+                <th>Modalite du Paiement</th>
                 <td>{{ facture_globale.modPaie }}</td>
             </tr>
             <tr>
-                <th>DatePaie</th>
+                <th>Date Paiement</th>
                 <td>{{ facture_globale.datePaie ? facture_globale.datePaie|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>Obs</th>
+                <th>Observation</th>
                 <td>{{ facture_globale.obs }}</td>
             </tr>
             <tr>
